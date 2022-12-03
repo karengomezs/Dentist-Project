@@ -8,7 +8,7 @@ import NavBar from "../components/nav-bar";
 export default function Home() {
   //acá se atrapa lo que está en el value del provider
   const state = useContext(globalContext);
-  console.log(state);
+
   return (
     <div className={styles.container}>
       <NavBar />
