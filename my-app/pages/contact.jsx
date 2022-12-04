@@ -1,10 +1,12 @@
 import NavBar from "../components/nav-bar";
 import { useState } from "react";
+const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [errorName, setErrorName] = useState(false);
+  const [errorEmail, setErrorEmail] = useState(false);
 
   return (
     <>
@@ -15,7 +17,17 @@ export default function Contact() {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          setErrorName(name.length < 5);
+          const nameLength = name.length < 5;
+          const nameEmpty = name.length === 0;
+          const emailEmpty = email.length === 0;
+          const emailInvalid = !emailRegex.test(email);
+
+          setErrorName(nameLength || nameEmpty);
+          setErrorEmail(emailEmpty || emailInvalid);
+
+          if (!nameLength && !nameEmpty && !emailEmpty && !emailInvalid) {
+            console.log(name, email);
+          }
         }}
       >
         <div>
@@ -41,7 +53,7 @@ export default function Contact() {
               setEmail(e.target.value);
             }}
             value={email}
-            type="email"
+            type="text" //no se usa tipo email, porque la validación se está haciendo en el onsubmit
             className="form-control"
             id="Email1"
           />
@@ -52,7 +64,9 @@ export default function Contact() {
         </button>
       </form>
 
-      {errorName && <p>Por favor verifique su información nuevamente</p>}
+      {(errorName || errorEmail) && (
+        <p>Por favor verifique su información nuevamente</p>
+      )}
     </>
   );
 }
