@@ -7,6 +7,7 @@ export default function Contact() {
   const [email, setEmail] = useState("");
   const [errorName, setErrorName] = useState(false);
   const [errorEmail, setErrorEmail] = useState(false);
+  const [success, setSuccess] = useState(false);
 
   return (
     <>
@@ -25,7 +26,12 @@ export default function Contact() {
           setErrorName(nameLength || nameEmpty);
           setErrorEmail(emailEmpty || emailInvalid);
 
-          if (!nameLength && !nameEmpty && !emailEmpty && !emailInvalid) {
+          const messageSuccess =
+            !nameLength && !nameEmpty && !emailEmpty && !emailInvalid;
+
+          setSuccess(messageSuccess);
+
+          if (messageSuccess) {
             console.log(name, email);
           }
         }}
@@ -65,7 +71,10 @@ export default function Contact() {
       </form>
 
       {(errorName || errorEmail) && (
-        <p>Por favor verifique su información nuevamente</p>
+        <p>Please verified your information again</p>
+      )}
+      {success && name.length !== 0 && (
+        <p>Thank you {name} we will contact with you as soon as possible </p>
       )}
     </>
   );
