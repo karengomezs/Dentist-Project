@@ -17,16 +17,22 @@ export default function Home() {
     });
   }, []);
 
-  console.log(state);
-
   return (
     <div className={styles.container}>
       <NavBar />
 
+      <h2>HOME</h2>
+
       <div class="row">
         {state.dentistsList.map((dentist) => {
           return (
-            <Card name={dentist.name} username={dentist.username} icon="❤️" />
+            <Card
+              key={dentist.id}
+              id={dentist.id}
+              name={dentist.name}
+              username={dentist.username}
+              icon="❤️"
+            />
           );
         })}
       </div>
