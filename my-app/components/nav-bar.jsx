@@ -31,11 +31,7 @@ export default function NavBar() {
         <li className="nav-item">
           <button
             onClick={() => {
-              if (globalState.isDark) {
-                globalState.setMode("light");
-              } else {
-                globalState.setMode("dark");
-              }
+              globalState.setDark(!globalState.isDark);
             }}
             className="btn btn-secondary"
           >

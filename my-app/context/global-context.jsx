@@ -3,10 +3,13 @@ import { createContext, useState } from "react";
 const GlobalContext = createContext();
 
 export const GlobalProvider = (props) => {
-  const [mode, setMode] = useState("light");
-  const isDark = mode === "dark";
+  const [isDark, setDark] = useState(false); //PASAR ESTO A REDUCER
+  const [dentistsList, setDentistsList] = useState([]);
+
   return (
-    <GlobalContext.Provider value={{ isDark, mode, setMode }}>
+    <GlobalContext.Provider
+      value={{ isDark, setDark, dentistsList, setDentistsList }}
+    >
       {props.children}
     </GlobalContext.Provider>
   );
