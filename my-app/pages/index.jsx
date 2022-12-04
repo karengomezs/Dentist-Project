@@ -21,8 +21,7 @@ export default function Home() {
     <div className={styles.container}>
       <NavBar />
 
-      <h2>HOME</h2>
-
+      <h2 class="text-center fw-bold lh-lg">HOME</h2>
       <div class="row">
         {state.dentistsList.map((dentist) => {
           return (
@@ -31,7 +30,7 @@ export default function Home() {
               id={dentist.id}
               name={dentist.name}
               username={dentist.username}
-              icon="❤️"
+              icon="⭐"
             />
           );
         })}

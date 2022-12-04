@@ -11,7 +11,7 @@ export default function NavBar() {
 
   return (
     <nav className="navbar navbar-expand-lg bg-light">
-      <div className="navbar-brand col-sm-9">DH Odonto</div>
+      <div className="navbar-brand col-sm-9"> <span class="text-danger">D</span><span>H </span><span>Odonto</span></div>
       <ul className="navbar-nav ">
         <li className="nav-item">
           <Link className="nav-link active" href="/">
