@@ -4,6 +4,7 @@ import globalContext from "../context/global-context";
 //esto useContext es para leer el contexto que creé
 import { useContext, useEffect } from "react";
 import NavBar from "../components/nav-bar";
+import Card from "../components/card";
 import { getDentists, apiUrl } from "../api/getDentist";
 
 export default function Home() {
@@ -25,22 +26,7 @@ export default function Home() {
       <div class="row">
         {state.dentistsList.map((dentist) => {
           return (
-            <div class="col-sm-3">
-              <div className="card" style={{ width: "18rem" }}>
-                <img
-                  src="/images/doctor.jpg"
-                  className="card-img-top"
-                  alt="..."
-                />
-                <div className="card-body">
-                  <h5 className="card-title">{dentist.name}</h5>
-                  <p className="card-text">{dentist.username}</p>
-                  <a href="#" className="btn btn-primary">
-                    ❤️
-                  </a>
-                </div>
-              </div>
-            </div>
+            <Card name={dentist.name} username={dentist.username} icon="❤️" />
           );
         })}
       </div>
