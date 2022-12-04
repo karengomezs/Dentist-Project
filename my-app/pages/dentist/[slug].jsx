@@ -1,6 +1,9 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { apiUrl, getDentistId } from "../../api/getDentist";
+import NavBar from "../../components/nav-bar";
+import styles from "../../styles/Home.module.css";
+
 
 export default function Dentist() {
   const router = useRouter();
@@ -17,8 +20,28 @@ export default function Dentist() {
 
   console.log(dentist);
   return (
-    <div>
-      <h1>Dentist</h1>
+
+    <div className={styles.container}>
+      <NavBar />
+      <h1 class="text-center">Detail Dentist {dentist.id}</h1>
+      <table class="table table-bordered border">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Website</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{dentist.name}</td>
+      <td>{dentist.email}</td>
+      <td>{dentist.phone}</td>
+      <td>{dentist.website}</td>
+    </tr>
+    </tbody>
+    </table>
     </div>
   );
 }
