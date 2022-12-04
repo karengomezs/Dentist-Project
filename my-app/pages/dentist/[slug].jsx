@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { apiUrl, getDentistId } from "../../api/getDentist";
 import NavBar from "../../components/nav-bar";
-import styles from "../../styles/Home.module.css";
 
 export default function Dentistdetail() {
   const router = useRouter();
@@ -18,7 +17,7 @@ export default function Dentistdetail() {
   }, [dentistId]);
 
   return (
-    <div className={styles.container}>
+    <div>
       <NavBar />
       <h1 className="text-center lh-lg">Detail Dentist {dentist.id}</h1>
       <table className="table table-bordered border">

@@ -1,5 +1,3 @@
-import Link from "next/link";
-import styles from "../styles/Home.module.css";
 import globalContext from "../context/global-context";
 //esto useContext es para leer el contexto que creé
 import { useContext, useEffect } from "react";
@@ -18,7 +16,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div>
       <NavBar />
 
       <h2 className="text-center fw-bold lh-lg">HOME</h2>
