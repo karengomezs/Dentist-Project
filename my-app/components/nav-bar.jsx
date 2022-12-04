@@ -6,11 +6,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon } from "@fortawesome/free-solid-svg-icons";
 
 export default function NavBar() {
-  const globalState = useContext(globalContext);
+  const { isDark, setDark } = useContext(globalContext);
 
   return (
-    <nav className="navbar navbar-expand-lg bg-light">
-      <div className="navbar-brand col-sm-9">
+    <nav
+      className={`navbar navbar-expand-lg  ${
+        isDark ? "navbar-dark bg-dark" : "bg-light"
+      } `}
+    >
+      <div className="navbar-brand  col-sm-9">
         <span className="text-danger">D</span>
         <span>H </span>
         <span>Odonto</span>
@@ -34,7 +38,7 @@ export default function NavBar() {
         <li className="nav-item">
           <button
             onClick={() => {
-              globalState.setDark(!globalState.isDark);
+              setDark(!isDark);
             }}
             className="btn btn-secondary"
           >
