@@ -7,11 +7,14 @@ import { faMoon } from "@fortawesome/free-solid-svg-icons";
 
 export default function NavBar() {
   const globalState = useContext(globalContext);
-  console.log(globalState);
 
   return (
     <nav className="navbar navbar-expand-lg bg-light">
-      <div className="navbar-brand col-sm-9"> <span class="text-danger">D</span><span>H </span><span>Odonto</span></div>
+      <div className="navbar-brand col-sm-9">
+        <span className="text-danger">D</span>
+        <span>H </span>
+        <span>Odonto</span>
+      </div>
       <ul className="navbar-nav ">
         <li className="nav-item">
           <Link className="nav-link active" href="/">

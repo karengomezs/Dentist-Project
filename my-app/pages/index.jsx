@@ -21,8 +21,8 @@ export default function Home() {
     <div className={styles.container}>
       <NavBar />
 
-      <h2 class="text-center fw-bold lh-lg">HOME</h2>
-      <div class="row">
+      <h2 className="text-center fw-bold lh-lg">HOME</h2>
+      <div className="row">
         {state.dentistsList.map((dentist) => {
           return (
             <Card
