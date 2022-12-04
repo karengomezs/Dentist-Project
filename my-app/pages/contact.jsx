@@ -1,8 +1,14 @@
+import H2 from "../components/h2";
+import P from "../components/p";
+import Label from "../components/label";
 import NavBar from "../components/nav-bar";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import globalContext from "../context/global-context";
 const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 export default function Contact() {
+  const state = useContext(globalContext);
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [errorName, setErrorName] = useState(false);
@@ -10,10 +16,10 @@ export default function Contact() {
   const [success, setSuccess] = useState(false);
 
   return (
-    <>
+    <div className={state.isDark ? "bg-dark" : "bg-body"}>
       <NavBar />
-      <h2>Want to know more?</h2>
-      <p>Send us your questions and we will contact you</p>
+      <H2>Want to know more?</H2>
+      <P>Send us your questions and we will contact you</P>
 
       <form
         onSubmit={(e) => {
@@ -37,9 +43,7 @@ export default function Contact() {
         }}
       >
         <div>
-          <label htmlFor="name" className="form-label">
-            Name
-          </label>
+          <Label htmlFor="name">Name</Label>
           <input
             onChange={(e) => {
               setName(e.target.value);
@@ -51,9 +55,7 @@ export default function Contact() {
           />
         </div>
         <div>
-          <label htmlFor="Email1" className="form-label">
-            Email address
-          </label>
+          <Label htmlFor="Email1">Email address</Label>
           <input
             onChange={(e) => {
               setEmail(e.target.value);
@@ -71,11 +73,11 @@ export default function Contact() {
       </form>
 
       {(errorName || errorEmail) && (
-        <p>Please verified your information again</p>
+        <P>Please verified your information again</P>
       )}
       {success && name.length !== 0 && (
-        <p>Thank you {name} we will contact with you as soon as possible </p>
+        <P>Thank you {name} we will contact with you as soon as possible </P>
       )}
-    </>
+    </div>
   );
 }

@@ -4,6 +4,7 @@ import { useContext, useEffect } from "react";
 import NavBar from "../components/nav-bar";
 import Card from "../components/card";
 import { getDentists, apiUrl } from "../api/getDentist";
+import H2 from "../components/h2";
 
 export default function Home() {
   //acá se atrapa lo que está en el value del provider
@@ -16,10 +17,10 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <div className={state.isDark ? "bg-dark" : "bg-body"}>
       <NavBar />
 
-      <h2 className="text-center fw-bold lh-lg">HOME</h2>
+      <H2>HOME</H2>
       <div className="row">
         {state.dentistsList.map((dentist) => {
           return (

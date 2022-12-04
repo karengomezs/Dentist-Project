@@ -10,16 +10,16 @@ export default function NavBar() {
 
   return (
     <nav
-      className={`navbar navbar-expand-lg  ${
-        isDark ? "navbar-dark bg-dark" : "bg-light"
-      } `}
+      className={`navbar navbar-expand-lg ${
+        isDark ? "navbar-dark bg-secondary" : "bg-light"
+      }`}
     >
-      <div className="navbar-brand  col-sm-9">
+      <div className="navbar-brand col-sm-9">
         <span className="text-danger">D</span>
         <span>H </span>
         <span>Odonto</span>
       </div>
-      <ul className="navbar-nav ">
+      <ul className="navbar-nav">
         <li className="nav-item">
           <Link className="nav-link active" href="/">
             Home
