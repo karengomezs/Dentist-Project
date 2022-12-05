@@ -5,6 +5,7 @@ import NavBar from "../components/nav-bar";
 import Card from "../components/card";
 import { getDentists, apiUrl } from "../api/getDentist";
 import H2 from "../components/h2";
+import { saveDentist } from "../api/favs";
 
 export default function Home() {
   //acá se atrapa lo que está en el value del provider
@@ -23,7 +24,16 @@ export default function Home() {
       <H2>HOME</H2>
       <div className="row">
         {state.dentistsList.map((dentist) => {
-          return <Card key={dentist.id} dentist={dentist} icon="⭐" />;
+          return (
+            <Card
+              key={dentist.id}
+              dentist={dentist}
+              onClick={() => {
+                saveDentist(dentist);
+              }}
+              icon="⭐"
+            />
+          );
         })}
       </div>
     </div>

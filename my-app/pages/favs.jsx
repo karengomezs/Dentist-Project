@@ -4,6 +4,7 @@ import H2 from "../components/h2";
 import globalContext from "../context/global-context";
 import { useContext, useEffect, useState } from "react";
 import NavBar from "../components/nav-bar";
+import { saveDentist } from "../api/favs";
 
 export default function Favs() {
   useEffect(() => {
@@ -22,7 +23,20 @@ export default function Favs() {
       <H2>DENTIST FAVS</H2>
       <div className="row">
         {dentistArray.map((dentist) => {
-          return <Card key={dentist.id} dentist={dentist} icon="⭐" />;
+          return (
+            <Card
+              key={dentist.id}
+              dentist={dentist}
+              onClick={() => {
+                const dentistTotals = dentistArray.filter((dent) => {
+                  return dent.id !== dentist.id;
+                });
+                saveDentist(dentist);
+                setDentistsArray(dentistTotals);
+              }}
+              icon="⭐"
+            />
+          );
         })}
       </div>
     </div>

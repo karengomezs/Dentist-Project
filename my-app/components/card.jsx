@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { saveDentist } from "../api/favs";
 
 export default function Card(props) {
   return (
@@ -14,12 +13,7 @@ export default function Card(props) {
             <h5 className="card-title">{props.dentist.name}</h5>
           </Link>
           <p className="card-text">{props.dentist.username}</p>
-          <button
-            onClick={() => {
-              saveDentist(props.dentist);
-            }}
-            className="btn btn-secondary"
-          >
+          <button onClick={props.onClick} className="btn btn-secondary">
             {props.icon}
           </button>
         </div>
