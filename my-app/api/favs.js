@@ -1,6 +1,6 @@
 export function saveDentist(dentist) {
     //si lo de la izquierda es false value, tome lo de la derecha
-    const prevDentist = readDentists() || []
+    const prevDentist = readDentists()
     const dentistExist = prevDentist.find((dent) => {
         return dent.id === dentist.id
     })
@@ -21,5 +21,5 @@ export function saveDentist(dentist) {
 
 export function readDentists() {
     const getDentist = localStorage.getItem("dentist")
-    return JSON.parse(getDentist)
+    return JSON.parse(getDentist) || []
 }
