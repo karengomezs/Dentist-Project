@@ -3,7 +3,7 @@ import globalContext from "../context/global-context";
 //esto useContext es para leer el contexto que creé
 import { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon } from "@fortawesome/free-solid-svg-icons";
+import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 export default function NavBar() {
   const { isDark, setDark } = useContext(globalContext);
@@ -40,9 +40,9 @@ export default function NavBar() {
             onClick={() => {
               setDark(!isDark);
             }}
-            className="btn btn-secondary"
+            className={`btn ${isDark ? "btn-warning" : " btn-primary"}`}
           >
-            <FontAwesomeIcon icon={faMoon} />
+            <FontAwesomeIcon icon={!isDark ? faMoon : faSun} />
           </button>
         </li>
       </ul>

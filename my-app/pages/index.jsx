@@ -30,6 +30,7 @@ export default function Home() {
               dentist={dentist}
               onClick={() => {
                 saveDentist(dentist);
+                window.alert("Dentist added successfully");
               }}
               icon="⭐"
             />
