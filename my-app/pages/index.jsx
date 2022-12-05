@@ -18,7 +18,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={state.isDark ? "bg-dark" : "bg-body"}>
+    <div className={`container ${state.isDark ? "bg-dark" : "bg-body"} `}>
       <NavBar />
 
       <H2>HOME</H2>
@@ -36,6 +36,19 @@ export default function Home() {
             />
           );
         })}
+        {/* aca agregue */}
+      </div>
+      <div class="container text-center">
+        <div class="row justify-content-md-center">
+          <div class="col col-lg-2">1 of 3</div>
+          <div class="col-md-auto">Variable width content</div>
+          <div class="col col-lg-2">3 of 3</div>
+        </div>
+        <div class="row">
+          <div class="col">1 of 3</div>
+          <div class="col-md-auto">Variable width content</div>
+          <div class="col col-lg-2">3 of 3</div>
+        </div>
       </div>
     </div>
   );

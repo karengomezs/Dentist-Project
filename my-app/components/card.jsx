@@ -4,8 +4,8 @@ export default function Card(props) {
   return (
     <div className="col-sm-3 ">
       <div
-        className="card text-center card border-success mb-3"
-        style={{ width: "18rem" }}
+        className="card text-center card border-secondary mb-2"
+        style={{ width: "16rem" }}
       >
         <img src="/images/doctor.jpg" className="card-img-top" alt="..." />
         <div className="card-body">

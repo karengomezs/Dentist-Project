@@ -16,7 +16,7 @@ export default function Contact() {
   const [success, setSuccess] = useState(false);
 
   return (
-    <div className={state.isDark ? "bg-dark" : "bg-body"}>
+    <div className={`container ${state.isDark ? "bg-dark" : "bg-body"} `}>
       <NavBar />
       <H2>Want to know more?</H2>
       <P>Send us your questions and we will contact you</P>

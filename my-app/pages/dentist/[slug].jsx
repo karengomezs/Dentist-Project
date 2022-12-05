@@ -1,9 +1,11 @@
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { apiUrl, getDentistId } from "../../api/getDentist";
+import globalContext from "../../context/global-context";
 import NavBar from "../../components/nav-bar";
 
 export default function Dentistdetail() {
+  const state = useContext(globalContext);
   const router = useRouter();
   const dentistId = router.query.slug;
   const [dentist, setDentist] = useState({});
@@ -17,7 +19,7 @@ export default function Dentistdetail() {
   }, [dentistId]);
 
   return (
-    <div>
+    <div className={`container ${state.isDark ? "bg-dark" : "bg-body"} `}>
       <NavBar />
       <h1 className="text-center lh-lg">Detail Dentist {dentist.id}</h1>
       <table className="table table-bordered border">
