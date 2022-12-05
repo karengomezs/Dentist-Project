@@ -20,7 +20,7 @@ export default function Favs() {
     <div className={state.isDark ? "bg-dark" : "bg-body"}>
       <NavBar />
 
-      <H2>DENTIST FAVS</H2>
+      <H2>FAVORITE DENTISTS</H2>
       <div className="row">
         {dentistArray.map((dentist) => {
           return (
