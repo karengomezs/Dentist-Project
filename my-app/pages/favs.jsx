@@ -17,28 +17,30 @@ export default function Favs() {
   const state = useContext(globalContext);
 
   return (
-    <div className={`container ${state.isDark ? "bg-dark" : "bg-body"} `}>
+    <div className={`${state.isDark ? "bg-dark" : "bg-body"} `}>
       <NavBar />
 
-      <H2>FAVORITE DENTISTS</H2>
-      <div className="row">
-        {dentistArray.map((dentist) => {
-          return (
-            <Card
-              key={dentist.id}
-              dentist={dentist}
-              onClick={() => {
-                const dentistTotals = dentistArray.filter((dent) => {
-                  return dent.id !== dentist.id;
-                });
-                saveDentist(dentist);
-                setDentistsArray(dentistTotals);
-              }}
-              icon="⭐"
-            />
-          );
-        })}
-      </div>
+      <main className="container">
+        <H2>FAVORITE DENTISTS</H2>
+        <div className="row">
+          {dentistArray.map((dentist) => {
+            return (
+              <Card
+                key={dentist.id}
+                dentist={dentist}
+                onClick={() => {
+                  const dentistTotals = dentistArray.filter((dent) => {
+                    return dent.id !== dentist.id;
+                  });
+                  saveDentist(dentist);
+                  setDentistsArray(dentistTotals);
+                }}
+                icon="⭐"
+              />
+            );
+          })}
+        </div>
+      </main>
     </div>
   );
 }

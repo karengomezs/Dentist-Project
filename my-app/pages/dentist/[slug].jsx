@@ -19,27 +19,29 @@ export default function Dentistdetail() {
   }, [dentistId]);
 
   return (
-    <div className={`container ${state.isDark ? "bg-dark" : "bg-body"} `}>
+    <div className={`${state.isDark ? "bg-dark" : "bg-body"} `}>
       <NavBar />
-      <h1 className="text-center lh-lg">Detail Dentist {dentist.id}</h1>
-      <table className="table table-bordered border">
-        <thead>
-          <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Email</th>
-            <th scope="col">Phone</th>
-            <th scope="col">Website</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>{dentist.name}</td>
-            <td>{dentist.email}</td>
-            <td>{dentist.phone}</td>
-            <td>{dentist.website}</td>
-          </tr>
-        </tbody>
-      </table>
+      <main className="container">
+        <h1 className="text-center lh-lg">Detail Dentist {dentist.id}</h1>
+        <table className="table table-bordered border">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Phone</th>
+              <th scope="col">Website</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{dentist.name}</td>
+              <td>{dentist.email}</td>
+              <td>{dentist.phone}</td>
+              <td>{dentist.website}</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
     </div>
   );
 }

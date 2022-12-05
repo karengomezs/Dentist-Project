@@ -2,8 +2,6 @@ import Link from "next/link";
 import globalContext from "../context/global-context";
 //esto useContext es para leer el contexto que creé
 import { useContext } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 export default function NavBar() {
   const { isDark, setDark } = useContext(globalContext);
@@ -42,7 +40,7 @@ export default function NavBar() {
             }}
             className={`btn ${isDark ? "btn-warning" : " btn-primary"}`}
           >
-            <FontAwesomeIcon icon={!isDark ? faMoon : faSun} />
+            <i className={!isDark ? "fa-solid fa-moon" : "fa-solid fa-sun"}></i>
           </button>
         </li>
       </ul>

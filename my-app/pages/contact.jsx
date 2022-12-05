@@ -16,68 +16,70 @@ export default function Contact() {
   const [success, setSuccess] = useState(false);
 
   return (
-    <div className={`container ${state.isDark ? "bg-dark" : "bg-body"} `}>
+    <div className={`${state.isDark ? "bg-dark" : "bg-body"} `}>
       <NavBar />
-      <H2>Want to know more?</H2>
-      <P>Send us your questions and we will contact you</P>
+      <main className="container">
+        <H2>Want to know more?</H2>
+        <P>Send us your questions and we will contact you</P>
 
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          const nameLength = name.length < 5;
-          const nameEmpty = name.length === 0;
-          const emailEmpty = email.length === 0;
-          const emailInvalid = !emailRegex.test(email);
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            const nameLength = name.length < 5;
+            const nameEmpty = name.length === 0;
+            const emailEmpty = email.length === 0;
+            const emailInvalid = !emailRegex.test(email);
 
-          setErrorName(nameLength || nameEmpty);
-          setErrorEmail(emailEmpty || emailInvalid);
+            setErrorName(nameLength || nameEmpty);
+            setErrorEmail(emailEmpty || emailInvalid);
 
-          const messageSuccess =
-            !nameLength && !nameEmpty && !emailEmpty && !emailInvalid;
+            const messageSuccess =
+              !nameLength && !nameEmpty && !emailEmpty && !emailInvalid;
 
-          setSuccess(messageSuccess);
+            setSuccess(messageSuccess);
 
-          if (messageSuccess) {
-            console.log(name, email);
-          }
-        }}
-      >
-        <div>
-          <Label htmlFor="name">Name</Label>
-          <input
-            onChange={(e) => {
-              setName(e.target.value);
-            }}
-            value={name}
-            type="text"
-            className="form-control"
-            id="name"
-          />
-        </div>
-        <div>
-          <Label htmlFor="Email1">Email address</Label>
-          <input
-            onChange={(e) => {
-              setEmail(e.target.value);
-            }}
-            value={email}
-            type="text" //no se usa tipo email, porque la validación se está haciendo en el onsubmit
-            className="form-control"
-            id="Email1"
-          />
-        </div>
+            if (messageSuccess) {
+              console.log(name, email);
+            }
+          }}
+        >
+          <div>
+            <Label htmlFor="name">Name</Label>
+            <input
+              onChange={(e) => {
+                setName(e.target.value);
+              }}
+              value={name}
+              type="text"
+              className="form-control"
+              id="name"
+            />
+          </div>
+          <div>
+            <Label htmlFor="Email1">Email address</Label>
+            <input
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
+              value={email}
+              type="text" //no se usa tipo email, porque la validación se está haciendo en el onsubmit
+              className="form-control"
+              id="Email1"
+            />
+          </div>
 
-        <button type="submit" className="btn btn-primary">
-          Send
-        </button>
-      </form>
+          <button type="submit" className="btn btn-primary">
+            Send
+          </button>
+        </form>
 
-      {(errorName || errorEmail) && (
-        <P>Please verified your information again</P>
-      )}
-      {success && name.length !== 0 && (
-        <P>Thank you {name} we will contact with you as soon as possible </P>
-      )}
+        {(errorName || errorEmail) && (
+          <P>Please verified your information again</P>
+        )}
+        {success && name.length !== 0 && (
+          <P>Thank you {name} we will contact with you as soon as possible </P>
+        )}
+      </main>
     </div>
   );
 }
