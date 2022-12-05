@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { saveDentist } from "../api/favs";
 
 export default function Card(props) {
   return (
@@ -9,13 +10,18 @@ export default function Card(props) {
       >
         <img src="/images/doctor.jpg" className="card-img-top" alt="..." />
         <div className="card-body">
-          <Link href={`/dentist/${props.id}`}>
-            <h5 className="card-title">{props.name}</h5>
+          <Link href={`/dentist/${props.dentist.id}`}>
+            <h5 className="card-title">{props.dentist.name}</h5>
           </Link>
-          <p className="card-text">{props.username}</p>
-          <Link href="#" className="btn btn-secondary">
+          <p className="card-text">{props.dentist.username}</p>
+          <button
+            onClick={() => {
+              saveDentist(props.dentist);
+            }}
+            className="btn btn-secondary"
+          >
             {props.icon}
-          </Link>
+          </button>
         </div>
       </div>
     </div>

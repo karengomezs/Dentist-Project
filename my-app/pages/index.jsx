@@ -23,15 +23,7 @@ export default function Home() {
       <H2>HOME</H2>
       <div className="row">
         {state.dentistsList.map((dentist) => {
-          return (
-            <Card
-              key={dentist.id}
-              id={dentist.id}
-              name={dentist.name}
-              username={dentist.username}
-              icon="⭐"
-            />
-          );
+          return <Card key={dentist.id} dentist={dentist} icon="⭐" />;
         })}
       </div>
     </div>
