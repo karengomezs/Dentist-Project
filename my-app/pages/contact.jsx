@@ -8,7 +8,6 @@ const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 export default function Contact() {
   const state = useContext(globalContext);
-
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [errorName, setErrorName] = useState(false);

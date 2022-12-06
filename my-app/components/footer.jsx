@@ -13,7 +13,6 @@ export default function Footer() {
         <div className="col col-lg-1">
           <i className="fa-brands fa-facebook"></i>
         </div>
-
         <div className="col col-lg-1">
           <i className="fa-brands fa-instagram"></i>
         </div>
