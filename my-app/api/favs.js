@@ -15,7 +15,6 @@ export function saveDentist(dentist) {
         })
     }
 
-
     localStorage.setItem("dentist", JSON.stringify(arrayDentists))
 }
 

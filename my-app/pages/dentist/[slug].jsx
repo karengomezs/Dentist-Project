@@ -3,6 +3,8 @@ import { useEffect, useState, useContext } from "react";
 import { apiUrl, getDentistId } from "../../api/getDentist";
 import globalContext from "../../context/global-context";
 import NavBar from "../../components/nav-bar";
+import H2 from "../../components/h2";
+import Span from "../../components/span";
 
 export default function Dentistdetail() {
   const state = useContext(globalContext);
@@ -22,22 +24,38 @@ export default function Dentistdetail() {
     <div className={`${state.isDark ? "bg-dark" : "bg-body"} `}>
       <NavBar />
       <main className="container">
-        <h1 className="text-center lh-lg">Detail Dentist {dentist.id}</h1>
+        <H2>Detail Dentist {dentist.id}</H2>
         <table className="table table-bordered border">
           <thead>
             <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Email</th>
-              <th scope="col">Phone</th>
-              <th scope="col">Website</th>
+              <th scope="col">
+                <Span>Name</Span>
+              </th>
+              <th scope="col">
+                <Span>Email</Span>
+              </th>
+              <th scope="col">
+                <Span>Phone</Span>
+              </th>
+              <th scope="col">
+                <Span>Website</Span>
+              </th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>{dentist.name}</td>
-              <td>{dentist.email}</td>
-              <td>{dentist.phone}</td>
-              <td>{dentist.website}</td>
+              <td>
+                <Span>{dentist.name}</Span>
+              </td>
+              <td>
+                <Span>{dentist.email}</Span>
+              </td>
+              <td>
+                <Span>{dentist.phone}</Span>
+              </td>
+              <td>
+                <Span>{dentist.website}</Span>
+              </td>
             </tr>
           </tbody>
         </table>
