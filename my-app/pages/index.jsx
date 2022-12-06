@@ -19,7 +19,7 @@ export default function Home() {
   }, []);
 
   return (
-    <div className={`${state.isDark ? "bg-dark" : "bg-body"} `}>
+    <div className={`min-vh-100 ${state.isDark ? "bg-dark" : "bg-body"} `}>
       <NavBar />
       <main className="container">
         <H2>HOME</H2>

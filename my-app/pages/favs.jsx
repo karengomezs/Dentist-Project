@@ -17,7 +17,7 @@ export default function Favs() {
   const state = useContext(globalContext);
 
   return (
-    <div className={`${state.isDark ? "bg-dark" : "bg-body"} `}>
+    <div className={`min-vh-100 ${state.isDark ? "bg-dark" : "bg-body"} `}>
       <NavBar />
 
       <main className="container">
