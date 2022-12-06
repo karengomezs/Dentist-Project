@@ -4,7 +4,7 @@ import globalContext from "../context/global-context";
 import { useContext } from "react";
 
 export default function NavBar() {
-  const { isDark, setDark } = useContext(globalContext);
+  const { isDark, dispatch } = useContext(globalContext);
 
   return (
     <nav
@@ -36,7 +36,7 @@ export default function NavBar() {
         <li className="nav-item">
           <button
             onClick={() => {
-              setDark(!isDark);
+              dispatch({ type: "changeMode" });
             }}
             className={`btn ${isDark ? "btn-warning" : " btn-primary"}`}
           >
