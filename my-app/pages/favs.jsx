@@ -5,6 +5,7 @@ import globalContext from "../context/global-context";
 import { useContext, useEffect, useState } from "react";
 import NavBar from "../components/nav-bar";
 import { saveDentist } from "../api/favs";
+import Footer from "../components/footer";
 
 export default function Favs() {
   useEffect(() => {
@@ -22,7 +23,7 @@ export default function Favs() {
 
       <main className="container">
         <H2>FAVORITE DENTISTS</H2>
-        <div className="row">
+        <div className="row p-5">
           {dentistArray.map((dentist) => {
             return (
               <Card
@@ -41,6 +42,7 @@ export default function Favs() {
           })}
         </div>
       </main>
+      <Footer/>
     </div>
   );
 }

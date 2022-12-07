@@ -13,8 +13,8 @@ export default function NavBar() {
       }`}
     >
       <div className="navbar-brand col-sm-10">
-        <span className="text-danger">D</span>
-        <span>H </span>
+        <span className="text-danger ps-5">D</span>
+        <span className="">H </span>
         <span>Odonto</span>
       </div>
       <ul className="navbar-nav">

@@ -4,6 +4,7 @@ import Label from "../components/label";
 import NavBar from "../components/nav-bar";
 import { useContext, useState } from "react";
 import globalContext from "../context/global-context";
+import Footer from "../components/footer";
 const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
 export default function Contact() {
@@ -21,7 +22,7 @@ export default function Contact() {
         <H2>Want to know more?</H2>
         <P>Send us your questions and we will contact you</P>
 
-        <form
+        <form className="p-5"
           onSubmit={(e) => {
             e.preventDefault();
             const nameLength = name.length < 5;
@@ -67,7 +68,7 @@ export default function Contact() {
             />
           </div>
 
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary d-grid gap-2 col-2 mx-auto m-5">
             Send
           </button>
         </form>
@@ -79,6 +80,7 @@ export default function Contact() {
           <P>Thank you {name} we will contact with you as soon as possible </P>
         )}
       </main>
+      <Footer />
     </div>
   );
 }
