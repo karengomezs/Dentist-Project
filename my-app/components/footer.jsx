@@ -3,7 +3,6 @@ import { useContext } from "react";
 
 export default function Footer() {
 	const state = useContext(globalContext);
-	const { isDark, dispatch } = useContext(globalContext);
 	return (
 		<footer >
 			<div className="row justify-content-md-center">
