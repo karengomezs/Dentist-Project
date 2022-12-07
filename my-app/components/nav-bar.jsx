@@ -12,7 +12,7 @@ export default function NavBar() {
         isDark ? "navbar-dark bg-secondary" : "bg-light"
       }`}
     >
-      <div className="navbar-brand col-sm-9">
+      <div className="navbar-brand col-sm-10">
         <span className="text-danger">D</span>
         <span>H </span>
         <span>Odonto</span>
