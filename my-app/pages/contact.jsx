@@ -16,13 +16,14 @@ export default function Contact() {
   const [success, setSuccess] = useState(false);
 
   return (
-    <div className={`min-vh-100 ${state.isDark ? "bg-dark" : "bg-body"} `}>
+    <div className={`min-vh-100 ${state.isDark ? "bg-secondary" : "bg-body"} `}>
       <NavBar />
       <main className="container">
         <H2>Want to know more?</H2>
         <P>Send us your questions and we will contact you</P>
 
-        <form className="p-5"
+        <form
+          className="p-5"
           onSubmit={(e) => {
             e.preventDefault();
             const nameLength = name.length < 5;
@@ -68,7 +69,10 @@ export default function Contact() {
             />
           </div>
 
-          <button type="submit" className="btn btn-primary d-grid gap-2 col-2 mx-auto m-5">
+          <button
+            type="submit"
+            className="btn btn-primary d-grid gap-2 col-2 mx-auto m-5"
+          >
             Send
           </button>
         </form>

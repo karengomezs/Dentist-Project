@@ -18,7 +18,7 @@ export default function Favs() {
   const state = useContext(globalContext);
 
   return (
-    <div className={`min-vh-100 ${state.isDark ? "bg-dark" : "bg-body"} `}>
+    <div className={`min-vh-100 ${state.isDark ? "bg-secondary" : "bg-body"} `}>
       <NavBar />
 
       <main className="container">
@@ -42,7 +42,7 @@ export default function Favs() {
           })}
         </div>
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

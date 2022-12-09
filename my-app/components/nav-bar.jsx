@@ -9,10 +9,10 @@ export default function NavBar() {
   return (
     <nav
       className={`navbar navbar-expand-lg ${
-        isDark ? "navbar-dark bg-secondary" : "bg-light"
+        isDark ? "navbar-dark bg-dark bg-opacity-50" : "bg-light"
       }`}
     >
-      <div className="navbar-brand col-sm-10">
+      <div className="navbar-brand col-sm-9">
         <span className="text-danger ps-5">D</span>
         <span className="">H </span>
         <span>Odonto</span>
@@ -38,7 +38,7 @@ export default function NavBar() {
             onClick={() => {
               dispatch({ type: "changeMode" });
             }}
-            className={`btn ${isDark ? "btn-warning" : " btn-primary"}`}
+            className={`btn ${isDark ? "btn-warning" : "btn-primary"}`}
           >
             <i className={!isDark ? "fa-solid fa-moon" : "fa-solid fa-sun"}></i>
           </button>
