@@ -9,8 +9,17 @@ export default function Footer() {
         Todos los derechos reservados
       </h5>
 
-      <div className="col-md-9 text-left d-flex flex-row">
-        <img src="/images/DH.png" className="w-25 h-25 ps-5" alt="..." />
+      <div className="col-md-8 text-left d-flex flex-row">
+        <div>
+          <h3>DIGITAL HOUSE</h3>
+        </div>
+
+        {/* <img
+          src="../public/images/DH.png"
+          className="w-25 h-25 ps-5"
+          alt="..."
+        /> */}
+        {/* <img src="/images/DH.png" className="w-25 h-25 ps-5" alt="..." /> */}
         <span className="d-flex flex-row-reverse col-sm-12 align-content-end">
           <i className="fa-brands rounded fs-4 pe-3 pt-3 fa-facebook"></i>
           <i className="fa-brands rounded fs-4 pe-5 pt-3 fa-instagram"></i>
